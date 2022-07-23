@@ -167,7 +167,7 @@ function operate(x, y, op) {
         return x * y;
     } else if(op === '/') {
         if(y === 0) {
-            return 'lmao';
+            return '∞';
         } else {
         return x / y;
         }
