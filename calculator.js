@@ -105,8 +105,8 @@ function inputEquals() {
         //handles final result
         secondOperand = displayValue;
         result = operate(Number(firstOperand), Number(secondOperand), secondOperator);
-        if(result === 'lmao') {
-            displayValue = 'lmao';
+        if(result === '∞') {
+            displayValue = '∞';
         } else {
             displayValue = roundAccurately(result, 15).toString();
             firstOperand = displayValue;
@@ -119,8 +119,8 @@ function inputEquals() {
         //handles first operation
         secondOperand = displayValue;
         result = operate(Number(firstOperand), Number(secondOperand), firstOperator);
-        if(result === 'lmao') {
-            displayValue = 'lmao';
+        if(result === '∞') {
+            displayValue = '∞';
         } else {
             displayValue = roundAccurately(result, 15).toString();
             firstOperand = displayValue;
