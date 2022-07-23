@@ -1,16 +1,22 @@
+/*first all variables are initialized before they are used*/
 let displayValue = '0';
 let firstOperand = null;
 let secondOperand = null;
 let firstOperator = null;
 let secondOperator = null;
 let result = null;
+/*here the button class is selected from the css*/
 const buttons = document.querySelectorAll('button');
-
+/*here the program starts by refreshing the screen*/
+updateDisplay();
+clickButton();
+/*after clicking to use this app, the program ends in functions and commands.
+based on what you want to do*/
 window.addEventListener('keydown', function(e){
     const key = document.querySelector(`button[data-key='${e.keyCode}']`);
     key.click();
 });
-
+/*this function refreshes the screen.*/
 function updateDisplay() {
     const display = document.getElementById('display');
     display.innerText = displayValue;
@@ -18,9 +24,7 @@ function updateDisplay() {
         display.innerText = displayValue.substring(0, 7);
     }
 }
-  
-updateDisplay();
-
+/*this function registers the mouse clicks and a distinction is made between an operant and an operator such as "="*/
 function clickButton() {
     for(let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function() {
@@ -47,8 +51,6 @@ function clickButton() {
         }
     )}
 }
-
-clickButton();
 
 function inputOperand(operand) {
     if(firstOperator === null) {
@@ -154,13 +156,6 @@ function clearDisplay() {
     firstOperator = null;
     secondOperator = null;
     result = null;
-}
-
-function inputBackspace() {
-    if(firstOperand != null) {
-        firstOperand = null;
-        updateDisplay();
-    }
 }
 
 function operate(x, y, op) {
